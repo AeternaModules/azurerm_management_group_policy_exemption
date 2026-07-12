@@ -1,3 +1,7 @@
+output "management_group_policy_exemptions_id" {
+  description = "Map of id values across all management_group_policy_exemptions, keyed the same as var.management_group_policy_exemptions"
+  value       = { for k, v in azurerm_management_group_policy_exemption.management_group_policy_exemptions : k => v.id }
+}
 output "management_group_policy_exemptions_description" {
   description = "Map of description values across all management_group_policy_exemptions, keyed the same as var.management_group_policy_exemptions"
   value       = { for k, v in azurerm_management_group_policy_exemption.management_group_policy_exemptions : k => v.description }
